@@ -26,7 +26,7 @@ SECRET_KEY = 'trjkgr0#)b$*2gh)gk11ye9*p@xz!aibqh%9a9i!wek&dyb#fp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vast-hollows-57431.herokuapp.com', '127.0.0.1:8000/']
 
 
 # Application definition
@@ -75,10 +75,24 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+    }
+}"""
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'mydb',
+        "CLIENT": {
+           "host": 'mongodb+srv://khal:onaolapo16.@cluster0.ibqpf.gcp.mongodb.net/mydb?retryWrites=true&w=majority',
+
+        },
+
 
     }
 }
